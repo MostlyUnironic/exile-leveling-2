@@ -172,7 +172,7 @@ export function Navbar({}: NavbarProps) {
               onClick={() => {
                 window
                   .open(
-                    "https://github.com/HeartofPhos/exile-leveling",
+                    "https://github.com/MostlyUnironic/exile-leveling-2",
                     "_blank"
                   )
                   ?.focus();
