@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/exile-leveling-2/sw.js', { scope: '/exile-leveling-2/' })})}

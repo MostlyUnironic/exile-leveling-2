@@ -1,0 +1,7 @@
+const e=`#section Interlude 1
+➞ {enter|b_1_5_town} #The Refuge
+
+➞ {enter|b_1_5_1} #Scorched Farmlands
+kill {kill|Isolde & Heldra}
+
+➞ {enter|b_1_5_1a} #Stones of Serle`;export{e as default};
