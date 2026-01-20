@@ -4,19 +4,40 @@ import { SplitRow } from "../SplitRow";
 import { Fragment } from "./Fragment";
 import styles from "./styles.module.css";
 import classNames from "classnames";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BiInfoCircle, BiSolidInfoCircle } from "react-icons/bi";
-import { useRecoilValue } from "recoil";
+import { atom, useRecoilValue } from "recoil";
+import type { RecoilState } from "recoil";
 
 interface StepProps {
   step: RouteData.FragmentStep;
+  // optional Recoil state that tracks whether this step is completed
+  isCompletedState?: RecoilState<boolean>;
 }
 
-export function FragmentStep({ step }: StepProps) {
+export function FragmentStep({ step, isCompletedState }: StepProps) {
   const config = useRecoilValue(configSelector);
   const [showSubSteps, setShowSubSteps] = useState(
     config.showSubsteps && step.subSteps.length > 0
   );
+  // Provide a default completed-state atom so we can always call hooks in the same order.
+  // This avoids conditional hook calls while still allowing an optional per-step Recoil state.
+  const DEFAULT_COMPLETED_STATE = atom<boolean>({
+    key: "FragmentStep/defaultCompletedState",
+    default: false,
+  });
+
+  // Resolve the Recoil state to read the completed flag (falls back to default false)
+  const completedState = (isCompletedState as RecoilState<boolean>) ||
+    DEFAULT_COMPLETED_STATE;
+  const isCompleted = useRecoilValue(completedState);
+
+  // When a step becomes completed, collapse its sub-steps; when it becomes un-completed,
+  // restore sub-step visibility according to the global config and whether any sub-steps exist.
+  useEffect(() => {
+    if (isCompleted) setShowSubSteps(false);
+    else setShowSubSteps(config.showSubsteps && step.subSteps.length > 0);
+  }, [isCompleted, config.showSubsteps, step.subSteps.length]);
 
   const headNodes: React.ReactNode[] = [];
   const tailNodes: React.ReactNode[] = [];

@@ -22,6 +22,7 @@ export namespace Fragments {
     | AscendFragment
     | CraftingFragment
     | DirectionFragment
+    | ImageFragment
     | CopyFragment;
 
   export interface KillFragment {
@@ -73,6 +74,13 @@ export namespace Fragments {
     item: string;
   }
 
+  export interface ImageFragment {
+  type: "image";
+  imagePath: string;
+  width: number;
+  height: number;
+  }
+
   export interface RewardVendorFragment {
     type: "reward_vendor";
     item: string;
@@ -120,6 +128,7 @@ export namespace Fragments {
 
   export interface CopyFragment {
     type: "copy";
-    text: string;
+    text: 
+  string;
   }
 }

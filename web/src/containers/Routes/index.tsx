@@ -7,7 +7,7 @@ import { gemProgressSelectorFamily } from "../../state/gem-progress";
 import { routeSelector } from "../../state/route";
 import { routeProgressSelectorFamily } from "../../state/route-progress";
 import { ReactNode } from "react";
-import { useRecoilValue } from "recoil";
+import { useRecoilValue } from "recoil"; 
 
 export default function RoutesContainer() {
   const route = useRecoilValue(routeSelector);
@@ -26,7 +26,16 @@ export default function RoutesContainer() {
           isCompletedState: routeProgressSelectorFamily(
             [sectionIndex, stepIndex].toString()
           ),
-          children: <FragmentStep key={stepIndex} step={step} />,
+          children: (
+            <FragmentStep
+              key={stepIndex}
+              step={step}
+              // pass completion state so the fragment can react to it
+              isCompletedState={routeProgressSelectorFamily(
+                [sectionIndex, stepIndex].toString()
+              )}
+            />
+          ),
         });
 
       if (step.type == "gem_step")

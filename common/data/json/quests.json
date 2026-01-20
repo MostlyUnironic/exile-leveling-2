@@ -11018,5 +11018,302 @@
     "name": "Threads of the Originator",
     "act": "12",
     "reward_offers": {}
+  },
+  "b_a1q1": {
+    "id": "b_a1q1",
+    "name": "Reaching Clearfell",
+    "act": "1",
+    "reward_offers": {
+      "b_a1q1": {
+        "quest_npc": "Renly",
+        "quest": {},
+        "vendor": {}
+      }
+    }
+  },
+  "b_a1q5": {
+    "id": "b_a1q5",
+    "name": "Finding the Forge",
+    "act": "1",
+    "reward_offers": {
+      "b_a1q5": {
+        "quest_npc": "Renly",
+        "quest": {},
+        "vendor": {}
+      }
+    }
+  },
+  "b_a1q6": {
+    "id": "b_a1q6",
+    "name": "The Lost lute",
+    "act": "1",
+    "reward_offers": {
+      "b_a1q6": {
+        "quest_npc": "Una",
+        "quest": {},
+        "vendor": {}
+      }
+    }
+  },
+  "b_a1q7": {
+    "id": "b_a1q7",
+    "name": "Sorrow Among Stones",
+    "act": "1",
+    "reward_offers": {
+      "b_a1q7": {
+        "quest_npc": "Lachlann",
+        "quest": {},
+        "vendor": {}
+      }
+    }
+  },
+  "b_a1q8": {
+    "id": "b_a1q8",
+    "name": "Ominous Altars",
+    "act": "1",
+    "reward_offers": {
+      "b_a1q8": {
+        "quest_npc": "Finn",
+        "quest": {},
+        "vendor": {}
+      }
+    }
+  },
+  "b_a1q9": {
+    "id": "b_a1q9",
+    "name": "The Trial of corruption",
+    "act": "1",
+    "reward_offers": {
+      "b_a1q9": {
+        "quest_npc": "Leitis",
+        "quest": {},
+        "vendor": {}
+      }
+    }
+  },
+  "b_a1q3": {
+    "id": "b_a1q3",
+    "name": "Secrets In the dark",
+    "act": "1",
+    "reward_offers": {
+      "b_a1q3": {
+        "quest_npc": "Una",
+        "quest": {},
+        "vendor": {}
+      }
+    }
+  },
+  "b_a2q1": {
+    "id": "b_a2q1",
+    "name": "Earning Passage",
+    "act": "2",
+    "reward_offers": {}
+  },
+  "b_a2q2": {
+    "id": "b_a2q2",
+    "name": "The Trial of Corruption",
+    "act": "2",
+    "reward_offers": {}
+  },
+  "b_a2q3": {
+    "id": "b_a2q3",
+    "name": "The City of Seven Waters",
+    "act": "2",
+    "reward_offers": {}
+  },
+  "b_a2q4": {
+    "id": "b_a2q4",
+    "name": "A Theft of Ivory",
+    "act": "2",
+    "reward_offers": {}
+  },
+  "b_a2q5": {
+    "id": "b_a2q5",
+    "name": "A Crown of Stone",
+    "act": "2",
+    "reward_offers": {}
+  },
+  "b_a2q6": {
+    "id": "b_a2q6",
+    "name": "Tradition's Toll",
+    "act": "2",
+    "reward_offers": {
+      "b_a2q6": {
+        "quest_npc": "Shambrim",
+        "quest": {},
+        "vendor": {}
+      }
+    }
+  },
+  "b_a2q7": {
+    "id": "b_a2q7",
+    "name": "Ancient Vows",
+    "act": "2",
+    "reward_offers": {}
+  },
+  "b_a2q8": {
+    "id": "b_a2q8",
+    "name": "Ascend to Power",
+    "act": "2",
+    "reward_offers": {}
+  },
+
+  "b_a3q1": {
+    "id": "b_a3q1",
+    "name": "The Well of Souls",
+    "act": "2",
+    "reward_offers": {}
+  },
+  "b_a3q2": {
+    "id": "b_a3q2",
+    "name": "Legacy of the Vaal",
+    "act": "3",
+    "reward_offers": {}
+  },
+  "b_a3q3": {
+    "id": "b_a3q3",
+    "name": "THe Slithering Dead",
+    "act": "3",
+    "reward_offers": {}
+  },
+  "b_a3q4": {
+    "id": "b_a3q4",
+    "name": "Tresures of Utzaal",
+    "act": "3",
+    "reward_offers": {}
+  },
+  "b_a3q5": {
+    "id": "b_a3q5",
+    "name": "Tribal Vengeance",
+    "act": "3",
+    "reward_offers": {}
+  },
+  "b_a3q6": {
+    "id": "b_a3q6",
+    "name": "The Trials of Chaos",
+    "act": "3",
+    "reward_offers": {}
+  },
+  "b_a4q1": {
+    "id": "b_a4q1",
+    "name": "The Search",
+    "act": "4",
+    "reward_offers": {}
+  },
+  "b_a4q2": {
+    "id": "b_a4q2",
+    "name": "Hostile Takeover",
+    "act": "4",
+    "reward_offers": {}
+  },
+  "b_a4q3": {
+    "id": "b_a4q3",
+    "name": "Shrike Island",
+    "act": "4",
+    "reward_offers": {}
+  },
+  "b_a4q4": {
+    "id": "b_a4q4",
+    "name": "Land of the Kin",
+    "act": "4",
+    "reward_offers": {}
+  },
+  "b_a4q5": {
+    "id": "b_a4q5",
+    "name": "Whakapanu Island",
+    "act": "4",
+    "reward_offers": {}
+  },
+  "b_a4q6": {
+    "id": "b_a4q6",
+    "name": "Abandoned Prision",
+    "act": "4",
+    "reward_offers": {}
+  },
+  "b_a4q7": {
+    "id": "b_a4q7",
+    "name": "Tribal Medicine",
+    "act": "4",
+    "reward_offers": {}
+  },
+  "b_a4q8": {
+    "id": "b_a4q8",
+    "name": "Dark Mists",
+    "act": "4",
+    "reward_offers": {}
+  },
+  "b_a4q9": {
+    "id": "b_a4q9",
+    "name": "Forgotten Bounty",
+    "act": "4",
+    "reward_offers": {}
+  },
+  "b_a4q10": {
+    "id": "b_a4q10",
+    "name": "Trial Of the Ancestors",
+    "act": "4",
+    "reward_offers": {}
+  },
+  "b_a4q11": {
+    "id": "b_a4q11",
+    "name": "Tawhoa's Test of Meddle",
+    "act": "4",
+    "reward_offers": {}
+  },
+  "b_a4q11b": {
+    "id": "b_a4q11b",
+    "name": "Tawhoa's Test",
+    "act": "4",
+    "reward_offers": {}
+  },
+  "b_a4q12": {
+    "id": "b_a4q12",
+    "name": "Tasalio's Test of Meddle",
+    "act": "4",
+    "reward_offers": {}
+  },
+  "b_a4q12b": {
+    "id": "b_a4q12b",
+    "name": "Tasalio's Test",
+    "act": "4",
+    "reward_offers": {}
+  },
+  "b_a4q13": {
+    "id": "b_a4q13",
+    "name": "Ngamahu's Test of Meddle",
+    "act": "4",
+    "reward_offers": {}
+  },
+  "b_a4q13b": {
+    "id": "b_a4q13b",
+    "name": "Ngamahu's Test",
+    "act": "4",
+    "reward_offers": {}
+  },
+
+  "b_a5q1": {
+    "id": "b_a5q1",
+    "name": "Recruit the Ezomytes",
+    "act": "5",
+    "reward_offers": {}
+  },
+  "b_a5q2": {
+    "id": "b_a5q2",
+    "name": "Recruit the Maraketh",
+    "act": "5",
+    "reward_offers": {}
+  },
+  "b_a5q3": {
+    "id": "b_a5q3",
+    "name": "Recruit the Vaal",
+    "act": "5",
+    "reward_offers": {}
+  },
+  "b_a5q4": {
+    "id": "b_a5q4",
+    "name": "Siege of Oriath",
+    "act": "5",
+    "reward_offers": {}
   }
 }
+

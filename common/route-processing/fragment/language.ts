@@ -17,6 +17,7 @@ export namespace Language {
     | "ascend"
     | "crafting"
     | "dir"
+    | "image"
     | "copy";
 
   export interface FragmentParameter {
@@ -50,6 +51,25 @@ export namespace Language {
             {
               name: "area_id",
               description: "Area Id used internally by Path Of Exile",
+            },
+          ],
+        },
+      ],
+      ["image"]: [
+        {
+          description: "Display an image with specified dimensions",
+          parameters: [
+            {
+              name: "filename",
+              description: "Image filename (from images folder)",
+            },
+            {
+              name: "width",
+              description: "Image width in pixels",
+            },
+            {
+              name: "height",
+              description: "Image height in pixels",
             },
           ],
         },

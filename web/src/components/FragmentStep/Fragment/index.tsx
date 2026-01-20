@@ -18,6 +18,18 @@ import {
   BsArrowUpSquare,
 } from "react-icons/bs";
 
+/**
+ * Fragment Component - Renders different types of route instructions
+ * 
+ * This module converts structured fragment data into visual UI components.
+ * Each fragment type (kill, area, quest, waypoint, etc.) has a dedicated renderer.
+ * Returns a tuple of [primary content, secondary content/link].
+ */
+
+/**
+ * Resolves image paths relative to the component's images directory.
+ * Uses Vite's import.meta.url for correct path resolution at runtime.
+ */
 function getImageUrl(path: string) {
   return new URL(`./images/${path}`, import.meta.url).href;
 }
@@ -35,10 +47,17 @@ function MinAreaLevelComponent(areaLevel: number) {
   );
 }
 
+/**
+ * Renders an enemy/boss name with styled emphasis.
+ */
 function EnemyComponent(enemy: string) {
   return <span className={classNames(styles.enemy)}>{enemy}</span>;
 }
 
+/**
+ * Renders an area with name, minimum level, and town indicator.
+ * Shows town icon for town areas, minimum level badge for dungeons.
+ */
 function AreaComponent(
   name: string,
   isTownArea: boolean,
@@ -61,6 +80,10 @@ function AreaComponent(
   );
 }
 
+/**
+ * Renders a quest with its name and the NPCs who offer rewards.
+ * Deduplicates NPCs from the selected reward offers.
+ */
 function QuestComponent(fragment: Fragments.QuestFragment) {
   const quest = Data.Quests[fragment.questId];
 
@@ -87,10 +110,16 @@ function QuestComponent(fragment: Fragments.QuestFragment) {
   );
 }
 
+/**
+ * Renders plain quest text (typically hints or objectives).
+ */
 function QuestTextComponent(text: string) {
   return <span className={classNames(styles.questText)}>{text}</span>;
 }
 
+/**
+ * Renders a waypoint with icon and label.
+ */
 function WaypointComponent() {
   return (
     <div className={classNames(styles.noWrap)}>
@@ -104,6 +133,9 @@ function WaypointComponent() {
   );
 }
 
+/**
+ * Renders a Trial of Ascendancy with icon and label.
+ */
 function TrialComponent() {
   return (
     <div className={classNames(styles.noWrap)}>
@@ -117,6 +149,9 @@ function TrialComponent() {
   );
 }
 
+/**
+ * Renders a logout action that returns to the last visited town area.
+ */
 function LogoutComponent(area: GameData.Area) {
   return (
     <>
@@ -127,6 +162,10 @@ function LogoutComponent(area: GameData.Area) {
   );
 }
 
+/**
+ * Renders portal usage with optional destination area.
+ * Used for both setting a portal and using it for travel.
+ */
 function PortalComponent(area?: GameData.Area) {
   return (
     <div className={classNames(styles.noWrap)}>
@@ -146,6 +185,10 @@ function PortalComponent(area?: GameData.Area) {
   );
 }
 
+/**
+ * Directional arrow components indexed 0-7 for compass directions.
+ * Index 0 = up, 1 = up-right, 2 = right, ... 7 = up-left (clockwise)
+ */
 const directions = [
   <InlineFakeBlock child={<BsArrowUpSquare />} />,
   <InlineFakeBlock child={<BsArrowUpRightSquare />} />,
@@ -157,14 +200,23 @@ const directions = [
   <InlineFakeBlock child={<BsArrowUpLeftSquare />} />,
 ];
 
+/**
+ * Renders a directional arrow based on compass index (0-7).
+ */
 function DirectionComponent(dirIndex: number) {
   return <span>{directions[dirIndex]}</span>;
 }
 
+/**
+ * Renders generic text with default styling.
+ */
 function GenericComponent(text: string) {
   return <span className={classNames(styles.default)}>{text}</span>;
 }
 
+/**
+ * Renders a crafting bench with available recipes.
+ */
 function CraftingComponent(craftingRecipes: string[]) {
   return (
     <span>
@@ -181,6 +233,10 @@ function CraftingComponent(craftingRecipes: string[]) {
   );
 }
 
+/**
+ * Maps ascendancy versions to their labyrinth layout URLs (poelab.com) and area IDs.
+ * Used to link to daily labyrinth layouts for each difficulty.
+ */
 const ASCEND_LOOKUP: Record<
   Fragments.AscendFragment["version"],
   { url: string; areaId: string }
@@ -197,6 +253,10 @@ const ASCEND_LOOKUP: Record<
   },
 };
 
+/**
+ * Renders ascendancy labyrinth info with a link to the daily layout.
+ * Returns [primary content showing labyrinth name/level, secondary content with layout link].
+ */
 function AscendComponent(
   version: Fragments.AscendFragment["version"]
 ): [React.ReactNode, React.ReactNode] {
@@ -224,11 +284,21 @@ function AscendComponent(
   ];
 }
 
+/**
+ * Main Fragment renderer - converts any fragment type to React components.
+ * 
+ * Returns a tuple: [primary content, secondary content/link]
+ * - Primary: main visual content to display inline
+ * - Secondary: optional link or supplementary info (e.g., labyrinth layout link)
+ * 
+ * Handles 20+ fragment types including movement, quests, rewards, and mechanics.
+ */
 export function Fragment(
   fragment: Fragments.AnyFragment
 ): [React.ReactNode, React.ReactNode] {
   if (typeof fragment === "string") return [<>{fragment}</>, null];
 
+  // Dispatch to appropriate renderer based on fragment type
   switch (fragment.type) {
     case "kill":
       return [EnemyComponent(fragment.value), null];
@@ -258,6 +328,7 @@ export function Fragment(
             dstArea.is_town_area,
             dstArea.level
           )}
+          {/* Show act transition for cross-act waypoint usage */}
           {dstArea.act !== srcArea.act &&
             dstArea.id !== "Labyrinth_Airlock" && (
               <> - {GenericComponent(`Act ${dstArea.act}`)}</>
@@ -299,7 +370,24 @@ export function Fragment(
       return [DirectionComponent(fragment.dirIndex), null];
     case "copy":
       return [<CopyToClipboard text={fragment.text} />, null];
+    case "image":
+      return [ImageComponent(fragment.imagePath, fragment.width, fragment.height), null];  
   }
 
+  // Fallback for unmapped fragment types (should not occur with proper data)
   return [<>{`unmapped: ${JSON.stringify(fragment)}`}</>, null];
+}
+
+function ImageComponent(imagePath: string, width: number, height: number) {
+  return (
+    <img
+      src={getImageUrl(imagePath)}
+      style={{
+        width: `${width}px`,
+        height: `${height}px`,
+        objectFit: "contain",
+      }}
+      alt=""
+    />
+  );
 }

@@ -1,100 +1,75 @@
 #section Act 3
-➞ {enter|1_3_1} #The City of Sarn
-Get {crafting}
-Help and talk to {generic|Clarissa}
-➞ {enter|1_3_town} #The Sarn Encampment
-➞ {enter|1_3_2} #The Slums
-    #sub Go {dir|0}
-➞ {enter|1_3_3_1} #The Crematorium
-    #sub Follow Stairs
-#ifdef LEAGUE_START
-    Complete {trial}
-#endif
-Find and kill {kill|Piety}, take {quest_text|Tolman's Bracelet}
-Get {crafting}
-{logout}
-Talk to {generic|Clarissa}, take {quest_text|Sewer Keys}
-Hand in {quest|a3q1} #Lost in Love
-➞ {enter|1_3_2} #The Slums
-    #sub Go {dir|0}
-➞ {enter|1_3_10_1} #The Sewers
-Find 1x{quest_text|Platinum Bust}
+➞ {enter|b_1_3_1} #Sandswept Marsh
+➞ {enter|b_1_3_town} #Ziggurat encampment
+➞ {enter|b_1_3_2} #Jungle Ruins
+Find the {enter|b_1_3_2a} #Venom crypts
+    #sub Near {waypoint}
+kill {kill|The Mighty Silverfist}
+➞ {enter|b_1_3_3} #Infested Barrens
+Find the {enter|b_1_3_5} #Chimeral Wetlands, enter the zone, grab the {waypoint} and go back out
+Find the {enter|b_1_3_4} #Azak bog, enter the zone, grab the {waypoint} and go back out
+Find the {enter|b_1_3_9} #Matlan Waterways
+    #sub Near {waypoint}
+{waypoint} ➞ {enter|b_1_3_2} #Jungle Ruins
+➞ {enter|b_1_3_2a} #Venom crypts
+Find {quest_text|Venom phial}
+{portal|set} ➞ {enter|b_1_3_town} #Ziggurat encampment
+Turn in phial at Servi for a reward
+➞ {enter|b_1_3_4} #Azak Bog
+    #sub Find the Flameskin ritual and activate all, it gives 25% fire res and rarity for the rest of the zone.
+kill {kill|Ignagduk}
+{portal|set} ➞ {enter|b_1_3_town} #Ziggurat encampment
+➞ {enter|b_1_3_5} #Chimeral Wetlands
+Find the {enter|b_1_3_6} #Temple/trial of chaos, enter the zone, grab the {waypoint} and go back out
+kill {kill|Xyclucian}
+➞ {enter|b_1_3_7} #Jiquani's Machinarium
+Find the first small soul core, then open the door
+Find two more small soul cores
+kill {kill|Blackjaw}
+➞ {enter|b_1_3_8} #Jiquani's Sanctum
 Get {waypoint_get}
-Find 2x{quest_text|Platinum Bust}
-➞ {enter|1_3_5} #The Marketplace
-Get {waypoint_get}
-#ifdef LEAGUE_START
-    ➞ {enter|1_3_6} #The Catacombs
-        #sub Look around nearby
-    Complete {trial}
-    Get {crafting}
-#endif
-{logout}
-Hand in {quest|a3q11} #Victario's Secrets
-{waypoint|1_3_5} #The Marketplace
-➞ {enter|1_3_7} #The Battlefront
-    #sub Search {dir|0}
-Get {waypoint_get}
-    #sub Go {dir|315}
-Find and take {quest_text|Ribbon Spool}
-    #sub Go {dir|225}
-➞ {enter|1_3_8_1} #The Solaris Temple Level 1
-    #sub Go {dir|45}
-➞ {enter|1_3_8_2} #The Solaris Temple Level 2
-➞ {arena|Eternal Laboratory}, get {crafting}
-{waypoint|1_3_7} #The Battlefront
-➞ {enter|1_3_9} #The Docks
-    #sub Go {dir|315}
-Find and take {quest_text|Thaumetic Sulphite}
-{logout}
-{waypoint|1_3_8_2} #The Solaris Temple Level 2
-Talk to {generic|Lady Dialla}
-Hand in {quest|a3q4} #The Ribbon Spool
-Hand in {quest|a3q5}, take {quest_text|Infernal Talc} #Fiery Dust
-{waypoint|1_3_10_1} #The Sewers
-Burn the {quest_text|Undying Blockage}
-Get {crafting}
-➞ {enter|1_3_13} #The Ebony Barracks
-Get {waypoint_get}
-Kill {kill|General Gravicius}
-    #sub Go {dir|315}
-➞ {enter|1_3_14_1} #The Lunaris Temple Level 1
-➞ {enter|1_3_14_2} #The Lunaris Temple Level 2
-Find and kill {kill|Piety}, take {quest_text|Tower Key}
-    #sub Follow stairs that are going up
-    #sub At the fork in the road with wagons, go the route with 1 wagon, not 2
-Get {crafting}
-{logout}
-Hand in {quest|a3q9} #Piety's Pets
-Hand in {quest|a3q8} #Sever the Right Hand
-{waypoint|1_3_13} #The Ebony Barracks
-➞ {enter|1_3_15} #The Imperial Gardens
-    #sub Go {dir|45}
-Get {waypoint_get}
-    #sub Follow the road
-#ifdef LEAGUE_START
-    Complete {trial}
-        #sub Go {dir|0}
-    Get {crafting}
-    {logout}
-    {waypoint|1_3_15} #The Imperial Gardens
-#endif
-#ifdef LIBRARY
-    ➞ {enter|1_3_17_1} #The Library
-        #sub Go {dir|315}
-    Get {waypoint_get}
-    Find {generic|Loose Candle} ➞ {enter|1_3_17_2} #The Archives
-    Get {crafting}
-        #sub Look for a candle in a narrow corridor
-    Find 4x{quest_text|Golden Page}
-    {logout}
-    {waypoint|1_3_17_1} #The Library
-        #sub Put currency needed to buy skill gems in inventory
-    Hand in {quest|a3q12} #A Fixture of Fate
-    {waypoint|1_3_15} #The Imperial Gardens
-#endif
-➞ {enter|1_3_18_1} #The Sceptre of God
-➞ {enter|1_3_18_2} #The Upper Sceptre of God
-    #sub Stairs spawn in one of the corners
-➞ {arena|Tower Rooftop}, Kill {kill|Dominus, High Templar}
-    #sub Look for barricades
+Talk to alva
+Find two medium soul cores
+Activate both generator 1
+Activate both generator 2
+    #sub Place portal {portal|set} Before activation
+{portal|set} ➞ {enter|b_1_3_town} #Ziggurat encampment
+{waypoint} ➞ {enter|b_1_3_8} #Jiquani's Sanctum
+kill {kill|Zicoatl}
+{waypoint} ➞ {enter|b_1_3_3} #Infested Barrens
+Insert the {quest_text|large soul core} into pedestal
+➞ {enter|b_1_3_9} #Matlan Waterways
+Activate lever at the end of the zone
+{portal|set} ➞ {enter|b_1_3_town} #Ziggurat encampment
+Talk to {generic|alva}
+➞ {enter|b_1_3_10} #The Drowned City
+Find the {enter|b_1_3_10a} #Molten vault, enter the zone, grab the {waypoint} and go back out.
+Find the {enter|b_1_3_11} #Apex of filth, enter the zone, grab the {waypoint} and go back out.
+{waypoint} ➞ {enter|b_1_3_10a} #Molten vault
+kill {kill|Mektul}
+    #sub {reward_quest|The Hammer of Kamasa} (Quest Item)
+    #sub Unlock {generic|Reforging Bench}  (Only needed on first character per league)
+{portal|set} ➞ {enter|b_1_3_town} #Ziggurat encampment
+{waypoint} ➞ {enter|b_1_3_11} #The Apex of Filth
+kill {kill|The Queen of Filth}
+{portal|set} ➞ {enter|b_1_3_town} #Ziggurat encampment
+➞ {enter|b_1_3_12} #The Temple of Kopec 1F
+    #sub Down the stairs
+➞ {enter|b_1_3_12} #The Temple of Kopec 2F
+➞ {enter|b_1_3_12} #The Temple of Kopec 3F
+kill {kill|Ketzuli, High priest of the Sun}
+Talk to {generic|alva}
+Go through the gateway
+➞ {enter|b_1_3_13} #Ziggurat encampment (Past)
+➞ {enter|b_1_3_14} #Utzaal
+    #sub {reward_quest|The sacrificial heart} can randomly drop in this zone
+kill {kill|Viper Napuatzi}
+➞ {enter|b_1_3_15} #Aggorat
+    #sub {reward_quest|The sacrificial heart} can randomly drop in this zone
+Find the Sacrificial table
+    #sub Place {reward_quest|The sacrificial heart} and stab it
+    #sub {reward_quest|+2 Passive points}
+➞ {enter|b_1_3_16} #The Black Chambers
+Defeat {kill|Doryani}
+{portal|set} ➞ {enter|b_1_3_town} #Ziggurat encampment
+

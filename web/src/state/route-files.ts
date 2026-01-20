@@ -19,9 +19,6 @@ async function loadDefaultRouteFiles() {
     Data.RouteSourceLookup["./routes/act-5.txt"],
     Data.RouteSourceLookup["./routes/act-6.txt"],
     Data.RouteSourceLookup["./routes/act-7.txt"],
-    Data.RouteSourceLookup["./routes/act-8.txt"],
-    Data.RouteSourceLookup["./routes/act-9.txt"],
-    Data.RouteSourceLookup["./routes/act-10.txt"],
   ]);
 
   return getRouteFiles(routeSources);

@@ -1,4 +1,4 @@
-#section Act 6
+#section Interlude 2
 ➞ {enter|2_6_town} #Lioneye's Watch
 ➞ {enter|2_6_1} #The Twilight Strand
 Kill {kill|Everything}
