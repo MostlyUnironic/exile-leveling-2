@@ -27,14 +27,14 @@ export function App() {
             <Route
               path="/"
               element={
-                <Page title="Exile Leveling" component={<RoutesContainer />} />
+                <Page title="Exile Leveling 2" component={<RoutesContainer />} />
               }
             />
             <Route
               path="/build"
               element={
                 <Page
-                  title="Exile Leveling - Build"
+                  title="Exile Leveling 2 - Build"
                   component={<BuildContainer />}
                 />
               }
@@ -43,7 +43,7 @@ export function App() {
               path="/edit-route"
               element={
                 <Page
-                  title="Exile Leveling - Edit Route"
+                  title="Exile Leveling 2 - Edit Route"
                   component={<EditRouteContainer />}
                 />
               }
